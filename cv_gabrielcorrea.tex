@@ -1,0 +1,246 @@
+\documentclass[11pt,letterpaper,roman]{moderncv}
+\moderncvstyle[nosymbols,details,left]{casual}
+\definecolor{myCustomColor}{RGB}{128, 0, 0}
+\colorlet{color1}{myCustomColor}
+
+\usepackage[lmargin=0.5in, rmargin=0.7in, tmargin=0.5in,bmargin=1in]{geometry}
+\usepackage{kpfonts}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=color1,
+    }
+
+% remove symbols
+\renewcommand*{\addresssymbol}{}
+\renewcommand*{\mobilephonesymbol}{}
+\renewcommand*{\fixedphonesymbol}{}
+\renewcommand*{\faxphonesymbol}{}
+\renewcommand*{\emailsymbol}{}
+\renewcommand*{\homepagesymbol}{}
+\renewcommand*{\linkedinsocialsymbol}{}
+\renewcommand*{\twittersocialsymbol}{}
+\renewcommand*{\githubsocialsymbol}{}
+
+% length for column
+\setlength{\hintscolumnwidth}{3cm}
+
+% edit heading
+\makeatletter
+\RenewDocumentCommand{\section}{sm}{%
+  \par\addvspace{5ex}%
+  \phantomsection{}% reset the anchor for hyperrefs
+  \addcontentsline{toc}{section}{#2}%
+  \cvitem[0ex]{\strut\raggedleft\raisebox{\baseletterheight}{\color{white}\rule{\hintscolumnwidth}{0.4ex}}}{\strut\sectionstyle{#2}}%
+  \par\nobreak\addvspace{2ex}\@afterheading}% to avoid a pagebreak after the heading
+\makeatother
+
+% edit footer
+\nopagenumbers{}
+
+% edit cventry 
+\renewcommand*{\cventry}[7][.25em]{%
+  \cvitem[#1]{#2}{%
+    {\bfseries#3}%
+    \ifthenelse{\equal{#4}{}}{}{ -- {\slshape#4}}%
+    \ifthenelse{\equal{#5}{}}{}{\newline#5}%
+    \ifthenelse{\equal{#6}{}}{}{\newline#6}%
+    \strut%
+    \ifx&#7&%
+    \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
+
+% adjust color
+\colorlet{color2}{black}
+\colorlet{lastnamecolor}{color2}
+\colorlet{firstnamecolor}{color2}
+\colorlet{addresscolor}{black}
+\colorlet{titlecolor}{black}
+\colorlet{thepagecolor}{black}
+\colorlet{headrulecolor}{white}
+
+% adjust column width
+\setlength{\separatorcolumnwidth}{0.05\textwidth}
+\renewcommand{\listitemsymbol}{}
+
+% adjust header formatting
+\renewcommand*{\namefont}{\fontsize{24}{26}\bfseries}
+\renewcommand*{\titlefont}{\fontsize{20}{22}\mdseries}
+\renewcommand*{\addressfont}{\large\mdseries}
+
+% adjust section formatting
+\renewcommand*{\sectionfont}{\fontsize{14}{16}\bfseries\upshape}
+\renewcommand*{\sectionstyle}[1]{{\sectionfont\textcolor{color1}{#1}}}
+
+% biographical info
+\firstname{Gabriel}
+\lastname{Correa}
+\title{Curriculum Vitae}
+\email{gbcorrea [at] umass [dot] edu}
+\homepage{https://websites.umass.edu/gbcorrea/}
+%\phone{}
+%\address{}
+
+\begin{document}
+%\setmainfont{Times New Roman}
+
+\makeatletter
+\renewcommand*{\makecvhead}{
+    \hspace{\separatorcolumnwidth + \hintscolumnwidth}\parbox{20em}{
+    \namestyle{{\@firstname} {\@lastname}} \vspace{1em} \\
+    \addressstyle{\@email} \\
+    \addressstyle{\@homepage}
+    }\vspace{1em}
+}
+\renewcommand*{\makecvfoot}{
+    \fancyfoot[c]{
+        \thepage
+    }
+}
+\makeatother
+
+\makecvtitle
+
+\section{Research Interests}
+
+\cvitem{Broad:}{Syntax, morphology, syntax-semantics interface}
+\cvitem{Narrow:}{Agreement \& case, person hierarchies, ergativity, applicative constructions, argument structure, information structure, clitic doubling, null subjects}
+
+\cvitem{Languages I've worked on:}{Blackfoot (Algonquian); Latvian (Baltic); Brazilian Portuguese, Spanish (Romance)}
+
+% previous info:
+% \cvitem{Narrow:}{Agreement, case, information structure, clitic doubling, null subjects}
+
+\section{Education}
+
+\cventry{2025 -- Present}
+    {University of Massachusetts, Amherst}
+    {Amherst, MA}
+    {PhD in Linguistics, in progress}
+    {}
+    {}
+
+\cventry{2021 -- 2025}
+    {The University of Chicago}
+    {Chicago, IL}
+    {B.A. in Linguistics with Honors, \emph{cum laude}}
+    {Honors Thesis: \emph{Obviation as dependent case: Evidence from Blackfoot pronominal enclitics}\newline Advisor: \emph{Karlos Arregi}}
+    {Cumulative GPA: 3.91 (Major GPA: 4.00)}
+
+\section{Non-Degree Education}
+
+\cventry{Sep -- Dec\\ 2024}
+    {Universität Wien}
+    {Vienna, Austria}
+    {Study Abroad Program (via The University of Chicago)}
+    {Courses in Advanced German and Civilization Studies}
+    {}
+
+\cventry{2022, 2024}
+    {The NYI Global Institute of Cultural, Cognitive, and Linguistic Studies}
+    {Remote}
+    {Summer courses in Linguistics}
+    {}
+    {}
+
+\cventry{2020, 2021}
+    {University of São Paulo}
+    {Remote}
+    {Summer courses in Linguistics}
+    {}
+    {}
+
+\section{Awards and Honors}
+\cvitem{2025}{Leonard Bloomfield Prize (Department of Linguistics, The University of Chicago)}
+\cvitem{2022, 2024, 2025}{Dean's List (The University of Chicago)}
+\cvitem{2023 -- 2024}{Quad Undergraduate Scholar (The University of Chicago)}
+\cvitem{2023}{College Summer Institute Scholar (The University of Chicago)}
+\cvitem{2023}{Sapir Scholar (Department of Linguistics, The University of Chicago)}
+\cvitem{2020}{Latin American Phoenix Scholar (The University of Chicago)}
+
+\newpage
+\section{Presentations}
+
+\cvitem{March 3, 2026}{\emph{Latvian ditransitives: Evidence for a low applicative structure.} ECO-5 Workshop, Harvard University.\textsubscript{\href{https://sites.google.com/view/eco-5}{[abstract]}}}
+
+\cvitem{Aug 2023}{\emph{Reframing Political Activism in East Germany.} College Summer Institute Closing Symposium, The University of Chicago.\textsubscript{\href{https://ccrf.uchicago.edu/2023-college-summer-institute-closing-symposium-proceedings\#Session5}{[abstract]}}}
+
+\section{Manuscripts}
+
+\cvitem{2026}
+    {\emph{Latvian ditransitives: Evidence for a low applicative structure.}
+    \newline In-progress.}
+
+\cvitem{2025}
+    {\emph{Insights from long-distance agreement in Blackfoot.}
+    \newline Unpublished manuscript.}
+
+\cvitem{2024}
+    {\emph{Brazilian Portuguese \& The African Influence: logophoricity and null subjects.}
+    \newline Unpublished manuscript.}
+
+\cvitem{2023}
+    {\emph{Indefinite null subjects in Brazilian Portuguese.}
+    \newline Unpublished manuscript.}
+
+\section{Research Experience}
+
+\cvitem{Jun -- Aug\\ 2024}
+    {\textbf{Research Assistant, Acquisition of Phonology in Brazilian Portuguese}
+    \newline \textit{Prof. Raquel Santana Santos -- Language Acquisition Lab, University of São Paulo} 
+    \newline Processed, edited, and catalogued audio recordings of toddlers and children acquiring Brazilian Portuguese.}
+
+\cvitem{Jun 2023 -- May\\ 2024}
+    {\textbf{Research Assistant, ``Subtitling the Fall of the Berlin Wall''}
+    \newline \textit{Prof. Nicole G. Burgoyne -- Department of Germanic Studies, The University of Chicago}
+    \newline Translated, captioned, and subtitled a set of interviews from German to English;
+    \newline conducted and presented research on the language of activism.}
+
+\cvitem{Jan -- Mar\\ 2023}
+    {\textbf{Research Assistant, Annotation of Conversations in Aleut}
+    \newline \textit{Madeline Snigaroff -- Department of Linguistics, The University of Chicago}
+    \newline 	Annotated and categorized video recordings of language revitalization sessions; assisted in the creation of a database with speaker and recording metadata.}
+
+\section{Service and Leadership}
+
+\cvitem{To appear}
+    {\textbf{Correa, Gabriel} and Kevin Morand (eds.). \emph{NELS 56: Proceedings of the fifty-sixth annual meeting of the North East Linguistics Society.} Amherst, MA: GLSA.}
+
+\section{Other Service}
+
+\cventry{Sep 2022 -- Aug\\ 2025}
+    {Doc Films, The University of Chicago}{Chicago, IL}
+    {Projectionist, Series Programmer\hfill {} \linebreak Winter 2024 Series: \emph{Class and Race in Brazilian Cinema}\textsubscript{\href{https://docfilms.org/archive/2024-series/winter/tuesday}{[link]}}}
+    {}
+    {}
+
+\cventry{Feb -- May\\ 2024}
+    {Library Student Advisory Council, The University of Chicago}{Chicago, IL}
+    {Student Representative, Class of 2025}
+    {}
+    {}
+
+\cventry{Feb 2021 -- Jun\\ 2022}
+    {Wanderlust Initiative}{Remote (Brazil)}
+    {Project Manager, Volunteer Language Tutor (English and German)}{}{}
+
+\section{Languages}
+
+\cvlistitem{Brazilian Portuguese (native)}
+\cvlistitem{English (fluent)}
+\cvlistitem{German (working knowledge)}
+\cvlistitem{Spanish (reading knowledge)}
+\cvlistitem{Korean (beginner)}
+
+\section{Skills}
+
+\cvitem{Proficient}{\LaTeX, Python, PCIbex Farm}
+\cvitem{Basic}{R, HTML, CSS, Praat, ELAN}
+
+% previous version:
+% \cvitem{Coding}{Python (Pandas, NumPy, Matplotlib), R}
+% \cvitem{Software}{\LaTeX, Praat, ELAN, Audacity, Aegisub}
+
+\vspace{2em}
+\cvlistitem{\slshape [Updated: April 2026]}
+
+\end{document}
